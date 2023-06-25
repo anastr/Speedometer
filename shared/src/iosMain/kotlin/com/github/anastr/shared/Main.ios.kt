@@ -1,4 +1,4 @@
-package com.github.anastr.speedometer
+package com.github.anastr.shared
 
 import androidx.compose.ui.window.ComposeUIViewController
 

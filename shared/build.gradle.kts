@@ -42,7 +42,7 @@ kotlin {
             dependencies {
                 implementation(compose.ui)
                 implementation(compose.foundation)
-                api("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.5")
+                implementation(compose.material)
             }
         }
         val desktopMain by getting {
@@ -63,7 +63,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.github.anastr.speedometer"
+    namespace = "com.github.anastr.shared"
     compileSdk = 33
     defaultConfig {
         minSdk = 21
