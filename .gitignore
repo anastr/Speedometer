@@ -1,0 +1,26 @@
+*.iml
+.gradle
+.idea
+.DS_Store
+build/
+captures
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+xcuserdata
+
+### IntelliJ IDEA ###
+*.iws
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### IOS ###
+iosApp/Podfile.lock
+iosApp/Pods/*
+iosApp/iosApp.xcworkspace/*
+iosApp/iosApp.xcodeproj/*
+!iosApp/iosApp.xcodeproj/project.pbxproj
+shared/shared.podspec
