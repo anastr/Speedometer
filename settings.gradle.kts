@@ -27,4 +27,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Speedometer"
-include(":androidApp", ":desktop", ":shared")
+include(":androidApp", ":desktop", ":shared", ":speedometer")
