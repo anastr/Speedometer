@@ -5,6 +5,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Button
 import androidx.compose.material.Text
@@ -29,7 +30,12 @@ fun App() {
         animationSpec = tween(durationMillis = 2000, easing = FastOutSlowInEasing)
     )
 
-    Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(12.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
         Speedometer(
             modifier = Modifier.size(250.dp),
             speed = currentSpeed,
@@ -37,7 +43,7 @@ fun App() {
         )
         Button(
             onClick = {
-                speed = Random.nextInt(100).toFloat()
+                speed = Random.nextFloat() * 100
             },
         ) {
             Text("Random speed")
