@@ -1,4 +1,4 @@
-# SpeedView
+# Speedometer
 Dynamic Speedometer widget for Compose Multiplatform. **amazing**, **powerful**, and _multi shape_ :zap: , you can change (colors, bar width, shape, text, font ...everything !!),
 [see project on GitHub](https://github.com/anastr/Speedometer/).
 
@@ -9,8 +9,9 @@ This widget is drawn using Compose API only, which makes it work on all platform
 [![Twitter](https://img.shields.io/badge/Twitter-@AnasAltairDent-blue.svg?style=flat)](http://twitter.com/AnasAltairDent)
 
 **Speedometers...**<br/>
-<img src="images/SpeedView-IOS.png" width="40%" />
-<img src="images/SpeedView-Android.png" width="40%" />
+<img src="images/SpeedView-IOS.png" width="33%" />
+<img src="images/SpeedView-Android.png" width="33%" />
+<img src="images/SpeedView-Desktop.png" width="33%" />
 
 # Donations
 
