@@ -71,40 +71,36 @@ dependencies {
 # Simple Usage
 Currently, this library only supports `SpeedView`. To use it, just call `SpeedView` composable like so:
 ```kotlin
-MaterialTheme {
-    SpeedView(
-        modifier = Modifier.size(250.dp),
-        speed = 50f,
-    )
-}
+SpeedView(
+    modifier = Modifier.size(250.dp),
+    speed = 50f,
+)
 ```
 
 By default, this library doesn't implement any animation. To make the indicator move smoothly, use compose animation :
 ```kotlin
-MaterialTheme {
-    var speed by remember { mutableStateOf(0f) }
-    val currentSpeed by animateFloatAsState(
-        targetValue = speed,
-        animationSpec = tween(durationMillis = 2000, easing = FastOutSlowInEasing)
+var speed by remember { mutableStateOf(0f) }
+val currentSpeed by animateFloatAsState(
+    targetValue = speed,
+    animationSpec = tween(durationMillis = 2000, easing = FastOutSlowInEasing)
+)
+Column(
+    modifier = Modifier
+        .fillMaxWidth()
+        .padding(12.dp),
+    horizontalAlignment = Alignment.CenterHorizontally,
+) {
+    SpeedView(
+        modifier = Modifier.size(250.dp),
+        speed = currentSpeed,
     )
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(12.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+    Button(
+        onClick = {
+            // Change speed to start the animation
+            speed = Random.nextFloat() * 100
+        },
     ) {
-        SpeedView(
-            modifier = Modifier.size(250.dp),
-            speed = currentSpeed,
-        )
-        Button(
-            onClick = {
-                // Change speed to start the animation
-                speed = Random.nextFloat() * 100
-            },
-        ) {
-            Text("Random speed")
-        }
+        Text("Random speed")
     }
 }
 ```
