@@ -17,8 +17,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.github.anastr.speedometer.SpeedViewDecoration
-import com.github.anastr.speedometer.Speedometer
+import com.github.anastr.speedometer.SpeedView
 import kotlin.random.Random
 
 @Composable
@@ -36,10 +35,9 @@ fun App() {
             .padding(12.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Speedometer(
+        SpeedView(
             modifier = Modifier.size(250.dp),
             speed = currentSpeed,
-            decoration = SpeedViewDecoration,
         )
         Button(
             onClick = {
