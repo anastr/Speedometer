@@ -27,4 +27,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Speedometer"
+includeBuild("convention-plugins")
 include(":androidApp", ":desktop", ":shared", ":speedometer")

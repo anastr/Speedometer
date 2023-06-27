@@ -3,7 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
-    id("maven-publish")
+    id("convention.publication")
 }
 
 group = "com.github.anastr"
