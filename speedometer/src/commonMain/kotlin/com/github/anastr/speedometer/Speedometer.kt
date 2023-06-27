@@ -3,24 +3,16 @@ package com.github.anastr.speedometer
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.github.anastr.speedometer.components.Section
 import com.github.anastr.speedometer.components.cneter.CenterBox
-import com.github.anastr.speedometer.components.cneter.SvCenterCircle
 import com.github.anastr.speedometer.components.indicators.IndicatorBox
-import com.github.anastr.speedometer.components.indicators.NormalIndicator
-import com.github.anastr.speedometer.components.text.SpeedText
 import com.github.anastr.speedometer.components.text.SpeedUnitText
 import com.github.anastr.speedometer.components.ticks.Ticks
 import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 typealias SpeedometerDecoration =  @Composable SpeedometerScope.(
     sections: ImmutableList<Section>,
@@ -31,32 +23,24 @@ typealias SpeedometerDecoration =  @Composable SpeedometerScope.(
 fun Speedometer(
     modifier: Modifier = Modifier,
     decoration: SpeedometerDecoration,
-    minSpeed: Float = 0f,
-    maxSpeed: Float = 100f,
+    minSpeed: Float = SpeedometerDefaults.MinSpeed,
+    maxSpeed: Float = SpeedometerDefaults.MaxSpeed,
     speed: Float = minSpeed,
-    startDegree: Int = 135,
-    endDegree: Int = 405,
-    unit: String = "Km",
-    unitSpeedSpace: Dp = 2.dp,
-    unitUnderSpeed: Boolean = false,
-    indicator: @Composable BoxScope.() -> Unit = { NormalIndicator() },
-    centerContent: @Composable BoxScope.() -> Unit = { SvCenterCircle() },
-    speedText: @Composable () -> Unit = { SpeedText(speed = speed) },
-    unitText: @Composable () -> Unit = { BasicText(text = unit) },
-    sections: ImmutableList<Section> = persistentListOf(
-        Section(0f, .6f, Color(0xFF00FF00.toInt())),
-        Section(.6f, .87f, Color(0xFFFFFF00.toInt())),
-        Section(.87f, 1f, Color(0xFFFF0000.toInt())),
-    ),
-    ticks: ImmutableList<Float> = persistentListOf(0f, 1f),
-    tickPadding: Dp = 30.dp,
-    tickRotate: Boolean = true,
-    tickLabel: @Composable BoxScope.(index: Int, tickSpeed: Float) -> Unit = { _, tickSpeed ->
-        SpeedText(
-            speed = tickSpeed,
-            style = TextStyle.Default.copy(fontSize = 10.sp),
-        )
-    },
+    startDegree: Int = SpeedometerDefaults.StartDegree,
+    endDegree: Int = SpeedometerDefaults.EndDegree,
+    unit: String = SpeedometerDefaults.Unit,
+    unitSpeedSpace: Dp = SpeedometerDefaults.UnitSpeedSpace,
+    unitUnderSpeed: Boolean = SpeedometerDefaults.UnitUnderSpeed,
+    indicator: @Composable BoxScope.() -> Unit = SpeedometerDefaults.Indicator,
+    centerContent: @Composable BoxScope.() -> Unit = SpeedometerDefaults.CenterContent,
+    speedText: @Composable () -> Unit = SpeedometerDefaults.SpeedometerText(speed),
+    unitText: @Composable () -> Unit = SpeedometerDefaults.UnitText(unit),
+    sections: ImmutableList<Section> = SpeedometerDefaults.Sections,
+    ticks: ImmutableList<Float> = SpeedometerDefaults.Ticks,
+    tickPadding: Dp = SpeedometerDefaults.TickPadding,
+    tickRotate: Boolean = SpeedometerDefaults.TickRotate,
+    tickLabel: @Composable BoxScope.(index: Int, tickSpeed: Float) -> Unit =
+        SpeedometerDefaults.TickLabel,
 ) {
     BaseSpeedometer(
         modifier = modifier,
