@@ -4,7 +4,10 @@ import com.github.anastr.shared.App
 
 
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
+    Window(
+        title = "Desktop App",
+        onCloseRequest = ::exitApplication,
+    ) {
         App()
     }
 }
