@@ -9,9 +9,9 @@ This widget is drawn using Compose API only, which makes it work on all platform
 [![Twitter](https://img.shields.io/badge/Twitter-@AnasAltairDent-blue.svg?style=flat)](http://twitter.com/AnasAltairDent)
 
 **Speedometers...**<br/>
-<img src="images/SpeedView-IOS.png" width="33%" />
-<img src="images/SpeedView-Android.png" width="33%" />
-<img src="images/SpeedView-Desktop.png" width="33%" />
+<img src="images/SpeedView-IOS.png" width="32%" />
+<img src="images/SpeedView-Android.png" width="32%" />
+<img src="images/SpeedView-Desktop.png" width="32%" />
 
 # Donations
 
