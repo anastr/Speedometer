@@ -23,7 +23,7 @@ object SpeedometerDefaults {
     const val MaxSpeed = 100f
     const val StartDegree = 135
     const val EndDegree = 405
-    const val Unit = "Km"
+    const val Unit = "Km/h"
     val UnitSpeedSpace: Dp = 2.dp
     const val UnitUnderSpeed: Boolean = false
     val Indicator: @Composable BoxScope.() -> Unit
