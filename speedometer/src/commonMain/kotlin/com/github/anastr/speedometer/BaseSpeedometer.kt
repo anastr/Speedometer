@@ -8,7 +8,7 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun BaseSpeedometer(
+internal fun BaseSpeedometer(
     modifier: Modifier,
     minSpeed: Float,
     maxSpeed: Float,
