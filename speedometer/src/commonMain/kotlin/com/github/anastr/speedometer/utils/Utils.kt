@@ -19,3 +19,7 @@ internal fun getRoundAngle(a: Float, d: Float): Float {
  */
 internal fun Size.offsetSize(offset: Float): Size =
     Size(this.width - offset, this.height - offset)
+
+private const val DegreeToRadians = (PI / 180f).toFloat()
+
+internal fun Float.toRadians(): Float = this * DegreeToRadians
