@@ -4,7 +4,7 @@ Dynamic Speedometer widget for Compose Multiplatform. **amazing**, **powerful**,
 
 This widget is drawn using Compose API only, which makes it work on all platforms that support Compose UI. You can use the Android View-UI [SpeedView](https://github.com/anastr/SpeedView/) library for XML View.
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.anastr/speedviewlib?color=cyan)](https://mvnrepository.com/artifact/com.github.anastr/speedometer/latest)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.anastr/speedometer?color=cyan)](https://mvnrepository.com/artifact/com.github.anastr/speedometer/latest)
 [![API](https://img.shields.io/badge/API-+21-red.svg?style=flat)](#)
 [![Twitter](https://img.shields.io/badge/Twitter-@AnasAltairDent-blue.svg?style=flat)](http://twitter.com/AnasAltairDent)
 
