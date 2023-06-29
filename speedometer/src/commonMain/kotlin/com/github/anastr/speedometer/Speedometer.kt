@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -42,6 +43,11 @@ fun Speedometer(
     tickLabel: @Composable BoxScope.(index: Int, tickSpeed: Float) -> Unit =
         SpeedometerDefaults.TickLabel,
 ) {
+
+    LaunchedEffect(ticks) {
+        require(ticks.all { it in 0f..1f }) {  "Ticks must be between [0f, 1f]!"}
+    }
+
     BaseSpeedometer(
         modifier = modifier,
         minSpeed = minSpeed,

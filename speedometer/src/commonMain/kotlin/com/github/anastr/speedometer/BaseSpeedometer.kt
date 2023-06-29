@@ -63,4 +63,12 @@ internal class SpeedometerScopeImpl(
         percentSpeed < 0f -> minSpeed
         else -> percentSpeed * (maxSpeed - minSpeed) + minSpeed
     }
+
+    init {
+        require(minSpeed < maxSpeed) { "minSpeed must be smaller than maxSpeed!" }
+        require(startDegree >= 0) { "StartDegree can\'t be Negative" }
+        require(endDegree >= 0) { "EndDegree can\'t be Negative" }
+        require(startDegree < endDegree) { "EndDegree must be bigger than StartDegree!" }
+        require(endDegree - startDegree <= 360) { "(EndDegree - StartDegree) must be smaller than 360!" }
+    }
 }
