@@ -20,6 +20,35 @@ typealias SpeedometerDecoration =  @Composable SpeedometerScope.(
     ticks: ImmutableList<Float>,
 ) -> Unit
 
+/**
+ * @author Anas Altair
+ *
+ * @param modifier Modifier to be applied to the speedometer
+ * @param decoration A [SpeedometerDecoration] to draw the background
+ * @param minSpeed The minimum value of the speedometer
+ * @param maxSpeed The maximum value of the speedometer
+ * @param speed The selected speed value for the speedometer to point to
+ * @param startDegree The start of the speedometer
+ * @param endDegree The end of the speedometer
+ * @param unit Unit text, the text next to [speedText]
+ * @param unitSpeedSpace Space between [speedText] and [unit]
+ * @param unitUnderSpeed To make [unit] text under [speedText]
+ * @param indicator A needle that points at [speed] value
+ * @param centerContent A composable to be drown in the center
+ * @param speedText Speed value composable
+ * @param unitText Unit value composable
+ * @param sections A list of sections
+ * @param ticks A list of positions with a scale of `[0, 1f]` each
+ * @param tickPadding Tick label's padding from top
+ * @param tickLabel A composable to be drown on each [ticks]
+ * @param tickRotate To make [tickLabel] rotated at each value
+ *
+ * @throws IllegalArgumentException If [minSpeed] >= [maxSpeed]
+ * @throws IllegalArgumentException If [startDegree] or [endDegree] are negative
+ * @throws IllegalArgumentException If [startDegree] >= [endDegree]
+ * @throws IllegalArgumentException If the difference between [endDegree] and [startDegree] is bigger than 360
+ * @throws IllegalArgumentException If one of the [ticks] out of range `[0f, 1f]`
+ */
 @Composable
 fun Speedometer(
     modifier: Modifier = Modifier,
@@ -45,7 +74,7 @@ fun Speedometer(
 ) {
 
     LaunchedEffect(ticks) {
-        require(ticks.all { it in 0f..1f }) {  "Ticks must be between [0f, 1f]!"}
+        require(ticks.all { it in 0f..1f }) { "Ticks must be between [0f, 1f]!" }
     }
 
     BaseSpeedometer(
