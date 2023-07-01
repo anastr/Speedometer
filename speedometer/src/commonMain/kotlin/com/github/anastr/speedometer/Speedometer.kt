@@ -35,8 +35,8 @@ typealias SpeedometerDecoration =  @Composable SpeedometerScope.(
  * @param startDegree The start of the speedometer
  * @param endDegree The end of the speedometer
  * @param unit Unit text, the text next to [speedText]
- * @param unitSpeedSpace Space between [speedText] and [unit]
- * @param unitUnderSpeed To make [unit] text under [speedText]
+ * @param unitSpeedSpace Space between [speedText] and [unitText]
+ * @param unitUnderSpeed To make [unitText] under [speedText]
  * @param speedUnitAlignment The position of [speedText] and [unitText] in the speedometer
  * @param speedUnitPadding The space between [speedText], [unitText] and the edge of the speedometer
  * @param indicator A needle that points at [speed] value
