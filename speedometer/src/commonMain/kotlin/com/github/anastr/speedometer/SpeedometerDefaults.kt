@@ -11,7 +11,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.github.anastr.speedometer.components.Section
-import com.github.anastr.speedometer.components.cneter.SvCenterCircle
 import com.github.anastr.speedometer.components.indicators.NormalIndicator
 import com.github.anastr.speedometer.components.text.SpeedText
 import kotlinx.collections.immutable.ImmutableList
@@ -31,7 +30,7 @@ object SpeedometerDefaults {
     val Indicator: @Composable BoxScope.() -> Unit
         get() = { NormalIndicator() }
     val CenterContent: @Composable BoxScope.() -> Unit
-        get() = { SvCenterCircle() }
+        get() = { }
 
     val Sections: ImmutableList<Section> = persistentListOf(
         Section(0f, .6f, Color(0xFF00FF00.toInt())),

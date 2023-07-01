@@ -84,7 +84,7 @@ fun AwesomeSpeedometer(
             color = Color(0xFF00E6E6),
         )
     },
-    centerContent: @Composable BoxScope.() -> Unit = { },
+    centerContent: @Composable BoxScope.() -> Unit = SpeedometerDefaults.CenterContent,
     speedText: @Composable () -> Unit = {
         SpeedText(
             speed = speed,

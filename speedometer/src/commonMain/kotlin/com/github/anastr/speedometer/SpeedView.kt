@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.Dp
 import com.github.anastr.speedometer.components.Section
+import com.github.anastr.speedometer.components.cneter.SvCenterCircle
 import com.github.anastr.speedometer.utils.getRoundAngle
 import com.github.anastr.speedometer.utils.offsetSize
 import kotlinx.collections.immutable.ImmutableList
@@ -62,7 +63,7 @@ fun SpeedView(
     speedUnitPadding: Dp = SpeedometerDefaults.SpeedUnitPadding,
     backgroundCircleColor: Color = SpeedometerDefaults.BackgroundCircleColor,
     indicator: @Composable BoxScope.() -> Unit = SpeedometerDefaults.Indicator,
-    centerContent: @Composable BoxScope.() -> Unit = SpeedometerDefaults.CenterContent,
+    centerContent: @Composable BoxScope.() -> Unit = { SvCenterCircle() },
     speedText: @Composable () -> Unit = SpeedometerDefaults.SpeedometerText(speed),
     unitText: @Composable () -> Unit = SpeedometerDefaults.UnitText(unit),
     sections: ImmutableList<Section> = SpeedometerDefaults.Sections,
