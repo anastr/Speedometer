@@ -4,6 +4,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -28,6 +29,8 @@ import kotlinx.collections.immutable.ImmutableList
  * @param unit Unit text, the text next to [speedText]
  * @param unitSpeedSpace Space between [speedText] and [unit]
  * @param unitUnderSpeed To make [unit] text under [speedText]
+ * @param speedUnitAlignment The position of [speedText] and [unitText] in the speedometer
+ * @param speedUnitPadding The space between [speedText], [unitText] and the edge of the speedometer
  * @param indicator A needle that points at [speed] value
  * @param centerContent A composable to be drown in the center
  * @param speedText Speed value composable
@@ -55,6 +58,8 @@ fun SpeedView(
     unit: String = SpeedometerDefaults.Unit,
     unitSpeedSpace: Dp = SpeedometerDefaults.UnitSpeedSpace,
     unitUnderSpeed: Boolean = SpeedometerDefaults.UnitUnderSpeed,
+    speedUnitAlignment: Alignment = SpeedometerDefaults.SpeedUnitAlignment,
+    speedUnitPadding: Dp = SpeedometerDefaults.SpeedUnitPadding,
     backgroundCircleColor: Color = SpeedometerDefaults.BackgroundCircleColor,
     indicator: @Composable BoxScope.() -> Unit = SpeedometerDefaults.Indicator,
     centerContent: @Composable BoxScope.() -> Unit = SpeedometerDefaults.CenterContent,
@@ -78,6 +83,8 @@ fun SpeedView(
         unit = unit,
         unitSpeedSpace = unitSpeedSpace,
         unitUnderSpeed = unitUnderSpeed,
+        speedUnitAlignment = speedUnitAlignment,
+        speedUnitPadding = speedUnitPadding,
         backgroundCircleColor = backgroundCircleColor,
         indicator = indicator,
         centerContent = centerContent,

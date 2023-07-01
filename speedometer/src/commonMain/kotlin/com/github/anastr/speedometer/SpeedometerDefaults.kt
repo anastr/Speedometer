@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.text.BasicText
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
@@ -51,7 +52,8 @@ object SpeedometerDefaults {
 
     @Composable
     fun SpeedometerText(speed: Float) = @Composable { SpeedText(speed = speed) }
-
     @Composable
     fun UnitText(unit: String) = @Composable { BasicText(text = unit) }
+    val SpeedUnitAlignment: Alignment = Alignment.BottomCenter
+    val SpeedUnitPadding: Dp = 10.dp
 }

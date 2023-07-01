@@ -8,10 +8,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.github.anastr.speedometer.components.Section
 import com.github.anastr.speedometer.components.cneter.CenterBox
 import com.github.anastr.speedometer.components.indicators.IndicatorBox
@@ -37,6 +37,8 @@ typealias SpeedometerDecoration =  @Composable SpeedometerScope.(
  * @param unit Unit text, the text next to [speedText]
  * @param unitSpeedSpace Space between [speedText] and [unit]
  * @param unitUnderSpeed To make [unit] text under [speedText]
+ * @param speedUnitAlignment The position of [speedText] and [unitText] in the speedometer
+ * @param speedUnitPadding The space between [speedText], [unitText] and the edge of the speedometer
  * @param indicator A needle that points at [speed] value
  * @param centerContent A composable to be drown in the center
  * @param speedText Speed value composable
@@ -65,6 +67,8 @@ fun Speedometer(
     unit: String = SpeedometerDefaults.Unit,
     unitSpeedSpace: Dp = SpeedometerDefaults.UnitSpeedSpace,
     unitUnderSpeed: Boolean = SpeedometerDefaults.UnitUnderSpeed,
+    speedUnitAlignment: Alignment = SpeedometerDefaults.SpeedUnitAlignment,
+    speedUnitPadding: Dp = SpeedometerDefaults.SpeedUnitPadding,
     backgroundCircleColor: Color = SpeedometerDefaults.BackgroundCircleColor,
     indicator: @Composable BoxScope.() -> Unit = SpeedometerDefaults.Indicator,
     centerContent: @Composable BoxScope.() -> Unit = SpeedometerDefaults.CenterContent,
@@ -105,7 +109,8 @@ fun Speedometer(
         )
 
         SpeedUnitText(
-            modifier = Modifier.padding(10.dp),
+            modifier = Modifier.padding(speedUnitPadding),
+            alignment = speedUnitAlignment,
             speedText = speedText,
             unitText = unitText,
             drawUnit = unit.isNotBlank(),
