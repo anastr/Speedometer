@@ -161,10 +161,10 @@ fun SpeedometerScope.AwesomeSpeedometerDecoration(
 ) {
     Canvas(modifier = Modifier.fillMaxSize()) {
 
-        val markH = triangleSize.toPx() * .9f
+        val markHeight = triangleSize.toPx() * .9f
         val markPath = Path()
         markPath.moveTo(size.minDimension * .5f, 0f)
-        markPath.lineTo(size.minDimension * .5f, markH)
+        markPath.lineTo(size.minDimension * .5f, markHeight)
 
         val trianglesPath = Path()
         trianglesPath.moveTo(size.minDimension * .5f, triangleSize.toPx())
@@ -217,9 +217,9 @@ fun SpeedometerScope.AwesomeSpeedometerDecoration(
                                 color = markColor,
                                 style = Stroke(
                                     width = if (j == 5) {
-                                        markH / 5f
+                                        markHeight / 5f
                                     } else {
-                                        markH / 9f
+                                        markHeight / 9f
                                     }
                                 )
                             )

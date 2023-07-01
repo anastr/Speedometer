@@ -5,7 +5,7 @@ import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toImmutableList
 
 /**
- * To generate list of stop points for ticks
+ * To generate list of stop points with equal distance of each others for ticks
  *
  * @param tickNumber Number of ticks
  *
@@ -17,9 +17,8 @@ fun generateTicks(tickNumber: Int): ImmutableList<Float> {
     return if (tickNumber == 1) {
         persistentListOf(.5f)
     } else {
-        buildList {
-            for (i in 0 until tickNumber)
-                add(1f / (tickNumber - 1).toFloat() * i)
-        }.toImmutableList()
+        (0 until tickNumber)
+            .map { 1f / (tickNumber - 1).toFloat() * it }
+            .toImmutableList()
     }
 }
