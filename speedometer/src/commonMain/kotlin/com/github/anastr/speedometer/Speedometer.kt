@@ -1,11 +1,15 @@
 package com.github.anastr.speedometer
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.github.anastr.speedometer.components.Section
@@ -61,6 +65,7 @@ fun Speedometer(
     unit: String = SpeedometerDefaults.Unit,
     unitSpeedSpace: Dp = SpeedometerDefaults.UnitSpeedSpace,
     unitUnderSpeed: Boolean = SpeedometerDefaults.UnitUnderSpeed,
+    backgroundCircleColor: Color = SpeedometerDefaults.BackgroundCircleColor,
     indicator: @Composable BoxScope.() -> Unit = SpeedometerDefaults.Indicator,
     centerContent: @Composable BoxScope.() -> Unit = SpeedometerDefaults.CenterContent,
     speedText: @Composable () -> Unit = SpeedometerDefaults.SpeedometerText(speed),
@@ -84,6 +89,12 @@ fun Speedometer(
         startDegree = startDegree,
         endDegree = endDegree,
     ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(backgroundCircleColor, CircleShape),
+        )
+
         decoration(sections, ticks)
 
         Ticks(

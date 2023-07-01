@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.drawscope.Stroke
@@ -54,6 +55,7 @@ fun SpeedView(
     unit: String = SpeedometerDefaults.Unit,
     unitSpeedSpace: Dp = SpeedometerDefaults.UnitSpeedSpace,
     unitUnderSpeed: Boolean = SpeedometerDefaults.UnitUnderSpeed,
+    backgroundCircleColor: Color = SpeedometerDefaults.BackgroundCircleColor,
     indicator: @Composable BoxScope.() -> Unit = SpeedometerDefaults.Indicator,
     centerContent: @Composable BoxScope.() -> Unit = SpeedometerDefaults.CenterContent,
     speedText: @Composable () -> Unit = SpeedometerDefaults.SpeedometerText(speed),
@@ -76,6 +78,7 @@ fun SpeedView(
         unit = unit,
         unitSpeedSpace = unitSpeedSpace,
         unitUnderSpeed = unitUnderSpeed,
+        backgroundCircleColor = backgroundCircleColor,
         indicator = indicator,
         centerContent = centerContent,
         speedText = speedText,

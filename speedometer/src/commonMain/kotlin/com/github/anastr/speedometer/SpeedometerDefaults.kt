@@ -26,6 +26,7 @@ object SpeedometerDefaults {
     const val Unit = "Km/h"
     val UnitSpeedSpace: Dp = 2.dp
     const val UnitUnderSpeed: Boolean = false
+    val BackgroundCircleColor: Color = Color.Transparent
     val Indicator: @Composable BoxScope.() -> Unit
         get() = { NormalIndicator() }
     val CenterContent: @Composable BoxScope.() -> Unit
