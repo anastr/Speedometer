@@ -13,6 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 fun SpeedUnitText(
     modifier: Modifier = Modifier,

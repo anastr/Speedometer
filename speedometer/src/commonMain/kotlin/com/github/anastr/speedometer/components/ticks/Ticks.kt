@@ -12,6 +12,14 @@ import androidx.compose.ui.unit.Dp
 import com.github.anastr.speedometer.SpeedometerScope
 import kotlinx.collections.immutable.ImmutableList
 
+/**
+ * @author Anas Altair
+ *
+ * @param ticks A list of ticks stops
+ * @param paddingTop The space between ticks and edge of the speedometer
+ * @param isRotate If true, each tick will be rotated with the speedometer
+ * @param label A composable to be drown at each tick
+ */
 @Composable
 internal fun SpeedometerScope.Ticks(
     ticks: ImmutableList<Float>,

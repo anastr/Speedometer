@@ -22,4 +22,5 @@ internal fun Size.offsetSize(offset: Float): Size =
 
 private const val DegreeToRadians = (PI / 180f).toFloat()
 
+/** Convert degrees to radians */
 internal fun Float.toRadians(): Float = this * DegreeToRadians

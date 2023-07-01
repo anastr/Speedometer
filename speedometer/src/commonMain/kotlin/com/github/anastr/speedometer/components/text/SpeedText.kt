@@ -6,6 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import kotlin.math.roundToInt
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 fun SpeedText(
     modifier: Modifier = Modifier,

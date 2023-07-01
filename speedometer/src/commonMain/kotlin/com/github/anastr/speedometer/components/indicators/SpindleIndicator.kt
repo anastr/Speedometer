@@ -10,6 +10,9 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 fun SpindleIndicator(
     modifier: Modifier = Modifier,

@@ -8,6 +8,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import com.github.anastr.speedometer.SpeedometerScope
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 internal fun SpeedometerScope.IndicatorBox(
     modifier: Modifier = Modifier,

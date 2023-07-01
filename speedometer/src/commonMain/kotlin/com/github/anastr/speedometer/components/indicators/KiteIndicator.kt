@@ -10,6 +10,9 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 fun KiteIndicator(
     modifier: Modifier = Modifier,
@@ -19,7 +22,6 @@ fun KiteIndicator(
     Canvas(modifier = modifier.fillMaxSize()) {
         val center = size.center
         val indicatorPath = Path()
-        indicatorPath.reset()
         indicatorPath.moveTo(center.x, 0f)
         val bottomY = size.height * .5f
         indicatorPath.lineTo(center.x - width.toPx(), bottomY)

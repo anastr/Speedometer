@@ -10,6 +10,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 fun SvCenterCircle(
     size: Dp = 40.dp,

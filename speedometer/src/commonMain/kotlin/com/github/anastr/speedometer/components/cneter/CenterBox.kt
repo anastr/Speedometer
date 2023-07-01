@@ -6,6 +6,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 internal fun CenterBox(
     modifier: Modifier = Modifier,

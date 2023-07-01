@@ -15,6 +15,9 @@ import com.github.anastr.speedometer.utils.toRadians
 import kotlin.math.cos
 import kotlin.math.sin
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 fun NeedleIndicator(
     modifier: Modifier = Modifier,

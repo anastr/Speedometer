@@ -13,6 +13,9 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
+/**
+ * @author Anas Altair
+ */
 @Composable
 fun LineIndicator(
     modifier: Modifier = Modifier,
@@ -30,7 +33,6 @@ fun LineIndicator(
         val risk = if (cap == StrokeCap.Round) width.toPx() * .5f else 0f
         val center = size.center
         val indicatorPath = Path()
-        indicatorPath.reset()
         indicatorPath.moveTo(center.x, 0f + risk)
         indicatorPath.lineTo(center.x, center.y * length)
 
@@ -40,7 +42,7 @@ fun LineIndicator(
             style = Stroke(
                 width = width.toPx(),
                 cap = cap,
-            )
+            ),
         )
     }
 }
