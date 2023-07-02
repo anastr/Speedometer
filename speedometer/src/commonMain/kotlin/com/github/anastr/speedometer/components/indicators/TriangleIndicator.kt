@@ -29,7 +29,7 @@ fun TriangleIndicator(
         indicatorPath.lineTo(center.x + width.toPx(), width.toPx())
         indicatorPath.moveTo(0f, 0f)
 
-        val endColor = Color(color.red.toInt(), color.green.toInt(), color.blue.toInt(), 0)
+        val endColor = color.copy(alpha = 0f)
 
         val colorStops = arrayOf(
             0.0f to color,
