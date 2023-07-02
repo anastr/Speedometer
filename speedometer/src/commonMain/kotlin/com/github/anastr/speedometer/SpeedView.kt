@@ -32,6 +32,7 @@ import kotlinx.collections.immutable.ImmutableList
  * @param unitUnderSpeed To make [unitText] under [speedText]
  * @param speedUnitAlignment The position of [speedText] and [unitText] in the speedometer
  * @param speedUnitPadding The space between [speedText], [unitText] and the edge of the speedometer
+ * @param backgroundCircleColor The color of the background circle shaped
  * @param indicator A needle that points at [speed] value
  * @param centerContent A composable to be drown in the center
  * @param speedText Speed value composable
