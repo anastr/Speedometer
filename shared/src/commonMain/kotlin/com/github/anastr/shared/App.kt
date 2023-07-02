@@ -28,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.github.anastr.speedometer.AwesomeSpeedometer
+import com.github.anastr.speedometer.PointerSpeedometer
 import com.github.anastr.speedometer.SpeedView
 import kotlin.random.Random
 
@@ -66,8 +67,16 @@ fun App() {
                         speed = currentSpeed,
                     )
                 }
+
                 Speedometer.AwesomeSpeedometer -> {
                     AwesomeSpeedometer(
+                        modifier = Modifier.size(250.dp),
+                        speed = currentSpeed,
+                    )
+                }
+
+                Speedometer.PointerSpeedometer -> {
+                    PointerSpeedometer(
                         modifier = Modifier.size(250.dp),
                         speed = currentSpeed,
                     )
