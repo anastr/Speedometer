@@ -28,15 +28,17 @@ kotlin {
 
     cocoapods {
         summary = "Some description for the Speedometer Module"
-        homepage = "Link to the Speedometer Module homepage"
+        homepage = "https://github.com/anastr/Speedometer"
         version = "1.0"
         ios.deploymentTarget = "14.1"
+        authors = "Anas Altair"
+        license = "MIT"
         podfile = project.file("../iosApp/Podfile")
         framework {
             baseName = "speedometer"
             isStatic = true
         }
-        extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
+//        extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
     }
 
     sourceSets {
