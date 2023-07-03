@@ -38,6 +38,12 @@ import kotlinx.collections.immutable.ImmutableList
  * @param speedText Speed value composable
  * @param unitText Unit value composable
  * @param sections A list of sections
+ * @param marksCount The number of marks to be drown
+ * @param marksColor The color of the marks
+ * @param marksPadding The space between marks and edge of the speedometer
+ * @param marksWidth The thickness of the marks
+ * @param marksHeight The length of the marks
+ * @param marksCap The shape of the marks
  * @param ticks A list of positions with a scale of `[0, 1f]` each
  * @param tickPadding Tick label's padding from top
  * @param tickLabel A composable to be drown on each [ticks]
@@ -68,6 +74,12 @@ fun SpeedView(
     speedText: @Composable () -> Unit = SpeedometerDefaults.SpeedometerText(speed),
     unitText: @Composable () -> Unit = SpeedometerDefaults.UnitText(unit),
     sections: ImmutableList<Section> = SpeedometerDefaults.Sections,
+    marksCount: Int = 8,
+    marksColor: Color = SpeedometerDefaults.marksColor,
+    marksPadding: Dp = SpeedometerDefaults.marksPadding,
+    marksWidth: Dp = SpeedometerDefaults.marksWidth,
+    marksHeight: Dp = SpeedometerDefaults.marksHeight,
+    marksCap: StrokeCap = SpeedometerDefaults.marksCap,
     ticks: ImmutableList<Float> = SpeedometerDefaults.Ticks,
     tickPadding: Dp = SpeedometerDefaults.TickPadding,
     tickRotate: Boolean = SpeedometerDefaults.TickRotate,
@@ -93,6 +105,12 @@ fun SpeedView(
         speedText = speedText,
         unitText = unitText,
         sections = sections,
+        marksCount = marksCount,
+        marksColor = marksColor,
+        marksPadding = marksPadding,
+        marksWidth = marksWidth,
+        marksHeight = marksHeight,
+        marksCap = marksCap,
         ticks = ticks,
         tickPadding = tickPadding,
         tickRotate = tickRotate,

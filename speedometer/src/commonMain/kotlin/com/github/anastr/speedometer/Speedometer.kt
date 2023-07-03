@@ -11,10 +11,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.unit.Dp
 import com.github.anastr.speedometer.components.Section
 import com.github.anastr.speedometer.components.cneter.CenterBox
 import com.github.anastr.speedometer.components.indicators.IndicatorBox
+import com.github.anastr.speedometer.components.marks.Marks
 import com.github.anastr.speedometer.components.text.SpeedUnitText
 import com.github.anastr.speedometer.components.ticks.Ticks
 import kotlinx.collections.immutable.ImmutableList
@@ -45,6 +47,12 @@ typealias SpeedometerDecoration =  @Composable SpeedometerScope.(
  * @param speedText Speed value composable
  * @param unitText Unit value composable
  * @param sections A list of sections
+ * @param marksCount The number of marks to be drown
+ * @param marksColor The color of the marks
+ * @param marksPadding The space between marks and edge of the speedometer
+ * @param marksWidth The thickness of the marks
+ * @param marksHeight The length of the marks
+ * @param marksCap The shape of the marks
  * @param ticks A list of positions with a scale of `[0, 1f]` each
  * @param tickPadding Tick label's padding from top
  * @param tickLabel A composable to be drown on each [ticks]
@@ -76,6 +84,12 @@ fun Speedometer(
     speedText: @Composable () -> Unit = SpeedometerDefaults.SpeedometerText(speed),
     unitText: @Composable () -> Unit = SpeedometerDefaults.UnitText(unit),
     sections: ImmutableList<Section> = SpeedometerDefaults.Sections,
+    marksCount: Int = SpeedometerDefaults.marksCount,
+    marksColor: Color = SpeedometerDefaults.marksColor,
+    marksPadding: Dp = SpeedometerDefaults.marksPadding,
+    marksWidth: Dp = SpeedometerDefaults.marksWidth,
+    marksHeight: Dp = SpeedometerDefaults.marksHeight,
+    marksCap: StrokeCap = SpeedometerDefaults.marksCap,
     ticks: ImmutableList<Float> = SpeedometerDefaults.Ticks,
     tickPadding: Dp = SpeedometerDefaults.TickPadding,
     tickRotate: Boolean = SpeedometerDefaults.TickRotate,
@@ -101,6 +115,15 @@ fun Speedometer(
         )
 
         decoration(sections, ticks)
+
+        Marks(
+            marksCount = marksCount,
+            color = marksColor,
+            paddingTop = marksPadding,
+            markWidth = marksWidth,
+            markHeight = marksHeight,
+            cap = marksCap,
+        )
 
         Ticks(
             ticks = ticks,

@@ -49,6 +49,12 @@ import kotlinx.collections.immutable.persistentListOf
  * @param speedText Speed value composable
  * @param unitText Unit value composable
  * @param sections A list of sections
+ * @param marksCount The number of marks to be drown
+ * @param marksColor The color of the marks
+ * @param marksPadding The space between marks and edge of the speedometer
+ * @param marksWidth The thickness of the marks
+ * @param marksHeight The length of the marks
+ * @param marksCap The shape of the marks
  * @param ticks A list of positions with a scale of `[0, 1f]` each
  * @param tickPadding Tick label's padding from top
  * @param tickLabel A composable to be drown on each [ticks]
@@ -103,6 +109,12 @@ fun PointerSpeedometer(
         )
     },
     sections: ImmutableList<Section> = SpeedometerDefaults.Sections,
+    marksCount: Int = 8,
+    marksColor: Color = SpeedometerDefaults.marksColor,
+    marksPadding: Dp = barWidth + 4.dp,
+    marksWidth: Dp = 2.dp,
+    marksHeight: Dp = 5.dp,
+    marksCap: StrokeCap = StrokeCap.Round,
     ticks: ImmutableList<Float> = persistentListOf(),
     tickPadding: Dp = barWidth + 10.dp,
     tickRotate: Boolean = SpeedometerDefaults.TickRotate,
@@ -138,6 +150,12 @@ fun PointerSpeedometer(
         speedText = speedText,
         unitText = unitText,
         sections = sections,
+        marksCount = marksCount,
+        marksColor = marksColor,
+        marksPadding = marksPadding,
+        marksWidth = marksWidth,
+        marksHeight = marksHeight,
+        marksCap = marksCap,
         ticks = ticks,
         tickPadding = tickPadding,
         tickRotate = tickRotate,

@@ -12,6 +12,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
@@ -31,7 +32,6 @@ import kotlinx.collections.immutable.ImmutableList
  * @param modifier Modifier to be applied to the speedometer
  * @param barWidth Thickness of the speedometer bar
  * @param barColor The color of the speedometer bar
- * @param markColor The color of the marks
  * @param triangleMarkSize The height of the triangle marks
  * @param triangleMarkColor The color of the triangle marks
  * @param minSpeed The minimum value of the speedometer
@@ -49,6 +49,12 @@ import kotlinx.collections.immutable.ImmutableList
  * @param speedText Speed value composable
  * @param unitText Unit value composable
  * @param sections A list of sections
+ * @param marksCount The number of marks to be drown
+ * @param marksColor The color of the marks
+ * @param marksPadding The space between marks and edge of the speedometer
+ * @param marksWidth The thickness of the marks
+ * @param marksHeight The length of the marks
+ * @param marksCap The shape of the marks
  * @param ticks A list of positions with a scale of `[0, 1f]` each
  * @param tickPadding Tick label's padding from top
  * @param tickLabel A composable to be drown on each [ticks]
@@ -66,7 +72,6 @@ fun AwesomeSpeedometer(
     modifier: Modifier = Modifier,
     barWidth: Dp = 60.dp,
     barColor: Color = Color(0xFF00E6E6),
-    markColor: Color = Color.White,
     triangleMarkSize: Dp = 12.dp,
     triangleMarkColor: Color = Color(0xFF3949AB),
     minSpeed: Float = SpeedometerDefaults.MinSpeed,
@@ -99,6 +104,12 @@ fun AwesomeSpeedometer(
         )
     },
     sections: ImmutableList<Section> = SpeedometerDefaults.Sections,
+    marksCount: Int = SpeedometerDefaults.marksCount,
+    marksColor: Color = SpeedometerDefaults.marksColor,
+    marksPadding: Dp = SpeedometerDefaults.marksPadding,
+    marksWidth: Dp = SpeedometerDefaults.marksWidth,
+    marksHeight: Dp = SpeedometerDefaults.marksHeight,
+    marksCap: StrokeCap = SpeedometerDefaults.marksCap,
     ticks: ImmutableList<Float> = generateTicks(6),
     tickPadding: Dp = triangleMarkSize + 4.dp,
     tickRotate: Boolean = SpeedometerDefaults.TickRotate,
@@ -116,7 +127,7 @@ fun AwesomeSpeedometer(
             AwesomeSpeedometerDecoration(
                 width = barWidth,
                 color = barColor,
-                markColor = markColor,
+                markColor = marksColor,
                 triangleSize = triangleMarkSize,
                 triangleColor = triangleMarkColor,
                 ticks = ticks,
@@ -137,6 +148,12 @@ fun AwesomeSpeedometer(
         speedText = speedText,
         unitText = unitText,
         sections = sections,
+        marksCount = marksCount,
+        marksColor = marksColor,
+        marksPadding = marksPadding,
+        marksWidth = marksWidth,
+        marksHeight = marksHeight,
+        marksCap = marksCap,
         ticks = ticks,
         tickPadding = tickPadding,
         tickRotate = tickRotate,

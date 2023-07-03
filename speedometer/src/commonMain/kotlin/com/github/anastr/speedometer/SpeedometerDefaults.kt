@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -37,6 +38,13 @@ object SpeedometerDefaults {
         Section(.6f, .87f, Color(0xFFFFFF00.toInt())),
         Section(.87f, 1f, Color(0xFFFF0000.toInt())),
     )
+
+    const val marksCount: Int = 0
+    val marksColor: Color = Color.White
+    val marksPadding: Dp = 0.dp
+    val marksWidth: Dp = 3.dp
+    val marksHeight: Dp = 9.dp
+    val marksCap: StrokeCap = StrokeCap.Butt
 
     val Ticks: ImmutableList<Float> = persistentListOf(0f, 1f)
     val TickPadding: Dp = 30.dp
