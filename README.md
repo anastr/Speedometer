@@ -79,6 +79,12 @@ SpeedView(
 )
 ```
 
+Current speedometers available:
+
+| SpeedView | AwesomeSpeedometer | PointerSpeedometer | TubeSpeedometer |
+| :---: | :---: | :---: | :---: |
+| <img src="images/SpeedView.png" /> | <img src="images/AwesomeSpeedometer.png" />| <img src="images/PointerSpeedometer.png" /> | <img src="images/TubeSpeedometer.png" /> |
+
 By default, this library doesn't implement any animation. To make the indicator move smoothly, use compose animation :
 ```kotlin
 var speed by remember { mutableStateOf(0f) }
