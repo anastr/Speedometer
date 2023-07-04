@@ -53,7 +53,7 @@ sourceSets {
     val commonMain by getting {
         dependencies {
             // Add Speedometer library
-            implementation("com.github.anastr:speedometer:1.0.0-ALPHA01")
+            implementation("com.github.anastr:speedometer:1.0.0-ALPHA02")
         }
     }
     // ...
@@ -66,7 +66,7 @@ If you want to use the library only in a native Android project. Add this line t
 
 ```kotlin
 dependencies {
-    implementation("com.github.anastr:speedometer-android:1.0.0-ALPHA01")
+    implementation("com.github.anastr:speedometer-android:1.0.0-ALPHA02")
 }
 ```
 
