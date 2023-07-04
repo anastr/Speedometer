@@ -30,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import com.github.anastr.speedometer.AwesomeSpeedometer
 import com.github.anastr.speedometer.PointerSpeedometer
 import com.github.anastr.speedometer.SpeedView
+import com.github.anastr.speedometer.TubeSpeedometer
 import kotlin.random.Random
 
 @Composable
@@ -77,6 +78,13 @@ fun App() {
 
                 Speedometer.PointerSpeedometer -> {
                     PointerSpeedometer(
+                        modifier = Modifier.size(250.dp),
+                        speed = currentSpeed,
+                    )
+                }
+
+                Speedometer.TubeSpeedometer -> {
+                    TubeSpeedometer(
                         modifier = Modifier.size(250.dp),
                         speed = currentSpeed,
                     )
