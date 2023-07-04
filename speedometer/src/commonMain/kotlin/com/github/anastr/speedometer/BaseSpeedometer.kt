@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.Modifier
+import com.github.anastr.speedometer.components.Section
+import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 internal fun BaseSpeedometer(
@@ -41,6 +43,7 @@ interface SpeedometerScope {
     fun degreeAtPercent(percent: Float): Float
     fun getSpeedPercent(speed: Float): Float
     fun getSpeedAtPercent(percentSpeed: Float): Float
+    fun ImmutableList<Section>.findSection(speed: Float): Section?
 }
 
 internal class SpeedometerScopeImpl(
@@ -62,6 +65,11 @@ internal class SpeedometerScopeImpl(
         percentSpeed > 1f -> maxSpeed
         percentSpeed < 0f -> minSpeed
         else -> percentSpeed * (maxSpeed - minSpeed) + minSpeed
+    }
+
+    override fun ImmutableList<Section>.findSection(speed: Float): Section? {
+        return this.find { (maxSpeed - minSpeed) * it.startOffset + minSpeed <= speed
+                && (maxSpeed - minSpeed) * it.endOffset + minSpeed >= speed }
     }
 
     init {
