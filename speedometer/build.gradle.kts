@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "com.github.anastr"
-version = "1.0.0-ALPHA01"
+version = "1.0.0-ALPHA02"
 
 kotlin {
     jvm("desktop") {
