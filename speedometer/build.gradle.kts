@@ -14,7 +14,7 @@ kotlin {
         jvmToolchain(11)
     }
 
-    android {
+    androidTarget {
         publishLibraryVariants("release", "debug")
         compilations.all {
             kotlinOptions {
