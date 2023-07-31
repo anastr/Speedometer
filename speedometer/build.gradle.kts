@@ -14,6 +14,10 @@ kotlin {
         jvmToolchain(11)
     }
 
+    js(IR) {
+        browser()
+    }
+
     androidTarget {
         publishLibraryVariants("release", "debug")
         compilations.all {

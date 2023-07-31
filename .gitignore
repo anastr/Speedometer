@@ -25,3 +25,6 @@ iosApp/iosApp.xcodeproj/*
 !iosApp/iosApp.xcodeproj/project.pbxproj
 shared/shared.podspec
 speedometer/speedometer.podspec
+
+### JS ###
+/kotlin-js-store/yarn.lock

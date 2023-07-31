@@ -13,7 +13,11 @@ kotlin {
         jvmToolchain(11)
     }
 
-    android {
+    js(IR) {
+        browser()
+    }
+
+    androidTarget {
         compilations.all {
             kotlinOptions {
                 jvmTarget = "1.8"
