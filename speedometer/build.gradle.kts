@@ -20,11 +20,6 @@ kotlin {
 
     androidTarget {
         publishLibraryVariants("release", "debug")
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
-        }
     }
     iosX64()
     iosArm64()

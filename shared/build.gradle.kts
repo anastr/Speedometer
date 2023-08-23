@@ -17,13 +17,8 @@ kotlin {
         browser()
     }
 
-    androidTarget {
-        compilations.all {
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
-        }
-    }
+    androidTarget()
+
     iosX64()
     iosArm64()
     iosSimulatorArm64()
