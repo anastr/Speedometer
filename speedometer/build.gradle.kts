@@ -37,7 +37,6 @@ kotlin {
             baseName = "speedometer"
             isStatic = true
         }
-//        extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
     }
 
     sourceSets {
